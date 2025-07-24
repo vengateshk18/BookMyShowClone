@@ -1,5 +1,6 @@
 package BookMyShow.models;
 import java.util.*;
+
 public class Hall {
     private int Id;
     private static int IdCounter=100;
@@ -9,6 +10,7 @@ public class Hall {
     private List<List<Seat>> seats;
     private Movie movie;
     private Theatre theatre;
+    private List<Show> shows;
 
     Hall(String name,int numberOfRows,int numberOfColumns,Theatre theatre){
         this.Id=IdCounter++;
@@ -99,5 +101,31 @@ public class Hall {
 
     public void setMovie(){
         this.movie=movie;
+    }
+
+    public List<Show> getAllShows(){
+        return this.shows;
+    }
+    public void addShow(Show show){
+        this.shows.add(show);
+    }
+
+    public String toString(){
+        String ans="Id: "+this.Id+" Name: "+this.name+" numberOfRows: "+this.numberOfRows+" numberOfColumns: "+this.numberOfColumns+" Movie: "+this.movie.getName()+" Theatre: "+this.theatre.getName();
+        ans+="\n";
+        ans+="----------------------Here is the seats booked details------------";
+        ans+="\n";
+        for(int rowIndex=0;rowIndex<this.numberOfRows;rowIndex++){
+            for(int columnIndex=0;columnIndex<this.numberOfColumns;columnIndex++){
+                if(seats.get(rowIndex).get(columnIndex).isBooked()){
+                    ans+="B\t";
+                }
+                else{
+                    ans+="N\t";
+                }
+            }
+            ans+="\n";
+        }
+        return ans;
     }
 }

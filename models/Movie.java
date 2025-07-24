@@ -43,4 +43,16 @@ public class Movie {
     public void setGenre(String genre){
         this.genre=genre;
     }
+
+    public LocalDate getReleaseDate(){
+        return this.dateOfRelease;
+    }
+    
+    public void setReleaseDate(LocalDate date){
+        this.dateOfRelease=date;
+    }
+
+    public String toString(){
+        return "Id: "+this.Id+" Name: "+this.name+" Language: "+this.language+" Genre: "+this.genre+" Date of Release: "+this.getReleaseDate();
+    }
 }

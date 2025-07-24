@@ -22,6 +22,13 @@ public class Seat {
         this.price=price;
     }
 
+    Seat(Hall hall, String name){
+        this.Id=IdCounter++;
+        this.name=name;
+        this.hall=hall;
+        this.isBooked=false;
+    }
+
     public int getId(){
         return this.Id;
     }
@@ -64,5 +71,13 @@ public class Seat {
 
     public void setPrice(int price){
         this.price=price;
+    }
+
+    public boolean isBooked(){
+        return this.isBooked;
+    }
+
+    public String toString(){
+        return "Seat Id: "+this.Id+" Name: "+name+" Hall: "+this.hall.getName()+" In Theatre: "+this.hall.getTheatre().getName()+" SeatType: "+this.seatType+" Price: "+this.price;
     }
 }
