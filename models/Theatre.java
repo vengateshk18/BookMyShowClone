@@ -9,7 +9,7 @@ public class Theatre{
     private List<Hall> halls;
     private City city;
 
-    Theatre(City city, String name,int numberOfHalls){
+    public Theatre(City city, String name,int numberOfHalls){
         this.Id=idCounter++;
         this.city=city;
         this.name=name;

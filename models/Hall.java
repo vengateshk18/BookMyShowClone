@@ -12,7 +12,7 @@ public class Hall {
     private Theatre theatre;
     private List<Show> shows;
 
-    Hall(String name,int numberOfRows,int numberOfColumns,Theatre theatre){
+    public Hall(String name,int numberOfRows,int numberOfColumns,Theatre theatre){
         this.Id=IdCounter++;
         this.name=name;
         this.numberOfRows=numberOfRows;
@@ -99,7 +99,7 @@ public class Hall {
         return this.movie;
     }
 
-    public void setMovie(){
+    public void setMovie(Movie movie){
         this.movie=movie;
     }
 

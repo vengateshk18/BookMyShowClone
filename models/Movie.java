@@ -9,11 +9,12 @@ public class Movie {
     private String genre;
     private LocalDate dateOfRelease;
 
-    Movie(String name, String language, String genre){
+    public Movie(String name, String language, String genre, LocalDate releasDate){
         this.Id=this.IdCounter++;
         this.name=name;
         this.language=language;
         this.genre=genre;
+        this.dateOfRelease=releasDate;
     }
 
     public int getId(){

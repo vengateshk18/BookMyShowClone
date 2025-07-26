@@ -9,7 +9,7 @@ public class Show {
     private Movie movie;
     private Hall hall;
 
-    Show(LocalDateTime start,LocalDateTime end, Movie movie, Hall hall){
+    public Show(LocalDateTime start,LocalDateTime end, Movie movie, Hall hall){
         this.Id=IdCounter++;
         this.start=start;
         this.end=end;

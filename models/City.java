@@ -7,7 +7,7 @@ public class City {
     private String name;
     private List<Theatre> theatres;
 
-    City(String name){
+    public City(String name){
         this.Id=IdCounter++;
         this.name=name;
         this.theatres=new ArrayList<>();

@@ -7,9 +7,12 @@ public class Customer {
     private String phoneNumber;
     private String email;
     private String password;
-    Customer(String name){
+    public Customer(String name, String password, String email, String phoneNumber){
         this.Id=this.IdCounter++;
         this.name=name;
+        this.password=password;
+        this.email=email;
+        this.phoneNumber=phoneNumber;
     }
 
     public int getId(){
