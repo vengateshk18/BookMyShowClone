@@ -47,4 +47,8 @@ public class City {
         }
         return false;
     }
+
+    public String toString(){
+        return "City Id: "+this.Id+" City Name: "+this.name;
+    }
 }
