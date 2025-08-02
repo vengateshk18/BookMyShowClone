@@ -81,7 +81,7 @@ public class Hall {
 
         for(int rowIndex=0;rowIndex<this.numberOfRows;rowIndex++){
             List<Seat> column=new ArrayList<>();
-            char row=(char) (rowIndex+97);
+            char row=(char) (rowIndex+65);
             for(int columnIndex=1;columnIndex<=this.numberOfColumns;columnIndex++){
                 String seatName=row+">"+columnIndex;
                 Seat seatObj=new Seat(this, seatName);
@@ -117,11 +117,12 @@ public class Hall {
         ans+="\n";
         for(int rowIndex=0;rowIndex<this.numberOfRows;rowIndex++){
             for(int columnIndex=0;columnIndex<this.numberOfColumns;columnIndex++){
-                if(seats.get(rowIndex).get(columnIndex).isBooked()){
-                    ans+="B\t";
+                Seat seat=seats.get(rowIndex).get(columnIndex);
+                if(seat.isBooked()){
+                    ans+=seat.getName()+" Status: B ";
                 }
                 else{
-                    ans+="N\t";
+                    ans+=seat.getName()+" Status: N ";
                 }
             }
             ans+="\n";

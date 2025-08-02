@@ -8,13 +8,15 @@ public class Show {
     private LocalDateTime end;
     private Movie movie;
     private Hall hall;
+    private Theatre theatre;
 
-    public Show(LocalDateTime start,LocalDateTime end, Movie movie, Hall hall){
+    public Show(LocalDateTime start,LocalDateTime end, Movie movie, Hall hall, Theatre theatre){
         this.Id=IdCounter++;
         this.start=start;
         this.end=end;
         this.movie=movie;
         this.hall=hall;
+        this.theatre=theatre;
     }
 
     public int getId(){
@@ -51,5 +53,13 @@ public class Show {
 
     public void setHall(Hall hall){
         this.hall=hall;
+    }
+
+    public void addTheatre(Theatre theatre){
+        this.theatre=theatre;
+    }
+
+    public Theatre getTheatre(){
+        return this.theatre;
     }
 }

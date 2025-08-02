@@ -7,6 +7,7 @@ public class Theatre{
     private String name;
     private int numberOfHalls;
     private List<Hall> halls;
+    private List<Show> shows; 
     private City city;
 
     public Theatre(City city, String name,int numberOfHalls){
@@ -15,6 +16,7 @@ public class Theatre{
         this.name=name;
         this.numberOfHalls=numberOfHalls;
         this.halls=new ArrayList<>();
+        this.shows=new ArrayList<>();
     }
 
     Theatre(String name,int numberOfHalls){
@@ -22,6 +24,7 @@ public class Theatre{
         this.name=name;
         this.numberOfHalls=numberOfHalls;
         this.halls=new ArrayList<>();
+        this.shows=new ArrayList<>();
     }
 
     public int getId(){
@@ -81,5 +84,13 @@ public class Theatre{
 
     public List<Hall> getHalls(){
         return this.halls;
+    }
+
+    public void addShow(Show show){
+        this.shows.add(show);
+    }
+
+    public List<Show> getAllShows(){
+        return this.shows;
     }
 }

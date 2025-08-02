@@ -72,5 +72,36 @@ public class Search {
         return answer;
     } 
 
+    public List<Movie> searchMoviebyCity(City city){
+        List<Movie> answers=new ArrayList<>();
+        
+        for(Theatre theatre:city.getAllTheatres()){
+            for(Show show:theatre.getAllShows()){
+                answers.add(show.getMovie());
+            }
+        }
+
+        return answers;
+    }
+    
+    public HashMap<Theatre,List<Show>>  getTheatresbyMovie(Movie movie){
+
+        HashMap<Theatre, List<Show>> answers = new HashMap<Theatre, List<Show>>();
+        HashMap<Integer,Theatre> theatres=this.database.getAllTheatres();
+        for(int theatreId: theatres.keySet()){
+            Theatre theatre=theatres.get(theatreId);
+            List<Show> shows=new ArrayList<>();
+            for(Show show:theatre.getAllShows()){
+                if(show.getMovie()==movie){
+                    shows.add(show);
+                }
+            }
+            if(shows.size()>0){
+                answers.put(theatre, shows);
+            }
+        }
+
+        return answers;
+    } 
 
 }

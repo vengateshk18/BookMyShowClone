@@ -40,8 +40,10 @@ public class Admin {
     }
 
     public Show addShow(LocalDateTime start, LocalDateTime end, Movie movie, Hall hall){
-        Show showObj=new Show(start, end, movie, hall);
+        Show showObj=new Show(start, end, movie, hall,hall.getTheatre());
         this.database.addShow(showObj);
+        Theatre theatre=hall.getTheatre();
+        theatre.addShow(showObj);
 
         return showObj;
     }
