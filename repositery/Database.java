@@ -11,6 +11,8 @@ public class Database {
     private HashMap<Integer,Customer> customerMap;
     private HashMap<Integer, Show> showMap;
     private HashMap<Integer, Movie> movieMap;
+    private HashMap<Integer,Booking> bookingMap;
+    private HashMap<Integer,Booking> bookingMap;
 
     public Database(){
         this.citiesMap=new HashMap<>();
@@ -19,6 +21,7 @@ public class Database {
         this.customerMap=new HashMap<>();
         this.showMap=new HashMap<>();
         this.movieMap=new HashMap<>();
+        this.bookingMap=new HashMap();
     }
 
     public HashMap<Integer,City> getAllCities(){
@@ -117,5 +120,20 @@ public class Database {
         return null;
     }
 
+    public Booking getBooking(int index){
+        if(this.bookingMap.containsKey(index)){
+            return this.bookingMap.get(index);
+        }
+
+        return null;
+    }
+
+    public void addBooking(Booking booking){
+        this.bookingMap.put(booking.getId(),booking);
+    }
+
+    public HashMap<Integer,Booking> getAllBookings(){
+        return this.bookingMap;
+    }
 
 }
